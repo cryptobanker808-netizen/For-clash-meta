@@ -1,0 +1,30 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+
+proxies:
+  - name: "SOCKS5"
+    type: socks5
+    server: 45.195.253.5
+    port: 62463
+    username: rvfJfSTJ
+    password: uWFW7nYU
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - SOCKS5
+      - DIRECT
+
+rules:
+  - MATCH,DIRECT
